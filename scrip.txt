@@ -3,6 +3,10 @@ use ProyectAutonoma;
 create table usuario(
 usu_id int auto_increment primary key,
 usu_nombre varchar(20),
+usu_doc_id varchar(15),
+usu_semestre varchar(2),
+usu_programa varchar(30),
+usu_celular varchar(15),
 usu_apellidos varchar(30),
 usu_correo varchar(70),
 usu_codigo varchar(10),
