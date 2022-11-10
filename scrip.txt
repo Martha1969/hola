@@ -1,2 +1,11 @@
 create database ProyectAutonoma;
 use ProyectAutonoma;
+
+
+
+ create table documento(
+     doc_id int auto_increment,
+     doc_tipo enum('propuesta','proyecto'),
+     doc_ruta varchar(30),
+     doc_fecha date,
+     primary key(doc_id));
