@@ -1,2 +1,15 @@
 create database ProyectAutonoma;
 use ProyectAutonoma;
+create table usuario(
+usu_id int auto_increment primary key,
+usu_nombre varchar(20),
+usu_apellidos varchar(30),
+usu_correo varchar(70),
+usu_codigo varchar(10),
+usu_facultad varchar(20));
+
+create table rol(
+rol_id int auto_increment primary key,
+rol_id_usuario int,
+rol_nombre varchar(20),
+foreign key(rol_id_usuario) references usuario(usu_id));
