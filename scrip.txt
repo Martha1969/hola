@@ -1,6 +1,5 @@
 create database ProyectAutonoma;
 use ProyectAutonoma;
-<<<<<<< HEAD
 create table usuario(
 usu_id int auto_increment primary key,
 usu_nombre varchar(20),
@@ -18,7 +17,6 @@ rol_id int auto_increment primary key,
 rol_id_usuario int,
 rol_nombre varchar(20),
 foreign key(rol_id_usuario) references usuario(usu_id));
-=======
 
 
 
@@ -28,4 +26,3 @@ foreign key(rol_id_usuario) references usuario(usu_id));
      doc_ruta varchar(30),
      doc_fecha date,
      primary key(doc_id));
->>>>>>> 118c2cd39bfc62944955bd2eadc18856ee222d2a
