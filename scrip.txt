@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 create database ProyectAutonoma;
 use ProyectAutonoma;
 <<<<<<< HEAD
@@ -38,3 +39,16 @@ create table trazadocumento
 	foregin key(doc_id) references documento(doc_id)
 );
 >>>>>>> 3d4146a2087f2d6200234ae7e816dd7963165cfc
+=======
+create database ProyectAutonoma;
+
+use ProyectAutonoma;
+
+create table TrazaEstado(
+	tra_id int AUTO_INCREMENT PRIMARY KEY,
+	tra_fecha DATE,
+	tra_estado NUM('Aprobado','Rechazado'),
+	tra_comentario VARCHAR(100),
+	FOREIGN KEY (per_id) REFERENCES Perfil(per_id)
+);
+>>>>>>> ac3c0a47a31194c0b6eb9b1d99c65cd3506bcc2c
