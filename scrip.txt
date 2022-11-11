@@ -1,8 +1,7 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 create database ProyectAutonoma;
 use ProyectAutonoma;
-<<<<<<< HEAD
+
 create table usuario(
 usu_id int auto_increment primary key,
 usu_nombre varchar(20),
@@ -50,7 +49,7 @@ ON DELETE CASCADE ON UPDATE CASCADE);
      doc_ruta varchar(30),
      doc_fecha date,
      primary key(doc_id));
-=======
+
 create table trazadocumento
 (
 	trad_id int not null auto_increment primary key, 
@@ -60,8 +59,7 @@ create table trazadocumento
 	trad_rol enum('Secretaria','Coordinador','Docente'), 
 	foregin key(doc_id) references documento(doc_id)
 );
->>>>>>> 3d4146a2087f2d6200234ae7e816dd7963165cfc
-=======
+
 
 create table TrazaEstado(
 	tra_id int AUTO_INCREMENT PRIMARY KEY,
@@ -70,7 +68,6 @@ create table TrazaEstado(
 	tra_comentario VARCHAR(100),
 	FOREIGN KEY (per_id) REFERENCES Perfil(per_id)
 );
->>>>>>> ac3c0a47a31194c0b6eb9b1d99c65cd3506bcc2c
-=======
+
 
 
