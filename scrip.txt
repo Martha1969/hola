@@ -40,9 +40,6 @@ create table trazadocumento
 );
 >>>>>>> 3d4146a2087f2d6200234ae7e816dd7963165cfc
 =======
-create database ProyectAutonoma;
-
-use ProyectAutonoma;
 
 create table TrazaEstado(
 	tra_id int AUTO_INCREMENT PRIMARY KEY,
