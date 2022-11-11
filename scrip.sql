@@ -37,18 +37,17 @@ per_usu_id_2 INT NOT NULL,
 per_fecha DATE NOT NULL,
 CONSTRAINT pk_per_id PRIMARY KEY(per_id),
 CONSTRAINT fk_per_usu_id_1 FOREIGN KEY(per_usu_id_1) REFERENCES usuario(usu_id)
-ON DELETE CASCADE ON UPDATE CASCADE),
+ON DELETE CASCADE ON UPDATE CASCADE,
 CONSTRAINT fk_per_usu_id_2 FOREIGN KEY(per_usu_id_2) REFERENCES usuario(usu_id)
 ON DELETE CASCADE ON UPDATE CASCADE);
 
 
 
  create table documento(
-     doc_id int auto_increment,
+     doc_id int auto_increment primary key,
      doc_tipo enum('propuesta','proyecto'),
      doc_ruta varchar(30),
-     doc_fecha date,
-     primary key(doc_id));
+     doc_fecha date);
 
 create table trazadocumento
 (
@@ -58,14 +57,14 @@ create table trazadocumento
 	trad_comentario varchar(255), 
 	trad_rol enum('Secretaria','Coordinador','Docente'),
 	doc_id int, 
-	foregin key(doc_id) references documento(doc_id)
+	foreign key(doc_id) references documento(doc_id)
 );
 
 
 create table TrazaEstado(
 	tra_id int AUTO_INCREMENT PRIMARY KEY,
 	tra_fecha DATE,
-	tra_estado NUM('Aprobado','Rechazado'),
+	tra_estado enum('Aprobado','Rechazado'),
 	tra_comentario VARCHAR(300),
 	per_id int,
 	FOREIGN KEY (per_id) REFERENCES Perfil(per_id)
