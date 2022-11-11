@@ -22,6 +22,27 @@ rol_nombre varchar(20),
 foreign key(rol_id_usuario) references usuario(usu_id));
 
 
+CREATE TABLE perfil(
+per_id INT AUTO_INCREMENT,
+per_modalidad VARCHAR(60) NOT NULL,
+per_titulo VARCHAR(270) NOT NULL,
+per_planteamiento_problema VARCHAR(3500) NOT NULL,
+per_objetivo_general VARCHAR(270) NOT NULL,
+per_objetivos_especificos VARCHAR(1000) NOT NULL,
+per_proyeccion_metodologica VARCHAR(2000) NOT NULL,
+per_referencias_bibliograficas VARCHAR(4500) NOT NULL,
+per_estado VARCHAR(1) NOT NULL,
+per_observacion VARCHAR(1000) NOT NULL,
+per_usu_id_1 INT NOT NULL,
+per_usu_id_2 INT NOT NULL,
+per_fecha DATE NOT NULL,
+CONSTRAINT pk_per_id PRIMARY KEY(per_id),
+CONSTRAINT fk_per_usu_id_1 FOREIGN KEY(per_usu_id_1) REFERENCES usuario(usu_id)
+ON DELETE CASCADE ON UPDATE CASCADE),
+CONSTRAINT fk_per_usu_id_2 FOREIGN KEY(per_usu_id_2) REFERENCES usuario(usu_id)
+ON DELETE CASCADE ON UPDATE CASCADE);
+
+
 
  create table documento(
      doc_id int auto_increment,
@@ -51,23 +72,5 @@ create table TrazaEstado(
 );
 >>>>>>> ac3c0a47a31194c0b6eb9b1d99c65cd3506bcc2c
 =======
-CREATE TABLE perfil(
-per_id INT AUTO_INCREMENT,
-per_modalidad VARCHAR(60) NOT NULL,
-per_titulo VARCHAR(270) NOT NULL,
-per_planteamiento_problema VARCHAR(3500) NOT NULL,
-per_objetivo_general VARCHAR(270) NOT NULL,
-per_objetivos_especificos VARCHAR(1000) NOT NULL,
-per_proyeccion_metodologica VARCHAR(2000) NOT NULL,
-per_referencias_bibliograficas VARCHAR(4500) NOT NULL,
-per_estado VARCHAR(1) NOT NULL,
-per_observacion VARCHAR(1000) NOT NULL,
-per_usu_id_1 INT NOT NULL,
-per_usu_id_2 INT NOT NULL,
-per_fecha DATE NOT NULL,
-CONSTRAINT pk_per_id PRIMARY KEY(per_id),
-CONSTRAINT fk_per_usu_id_1 FOREIGN KEY(per_usu_id_1) REFERENCES usuario(usu_id)
-ON DELETE CASCADE ON UPDATE CASCADE),
-CONSTRAINT fk_per_usu_id_2 FOREIGN KEY(per_usu_id_2) REFERENCES usuario(usu_id)
-ON DELETE CASCADE ON UPDATE CASCADE);
->>>>>>> 4140d69ba4526546dc0cedfbc3cffa5780d65e17
+
+
