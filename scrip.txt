@@ -3,7 +3,8 @@ use ProyectAutonoma;
 create table trazadocumento
 (
 	trad_id int not null auto_increment primary key, 
-	trad_fecha date, trad_estado enum('Aprobado','Rechazado'), 
+	trad_fecha date, 
+	trad_estado enum('Aprobado','Rechazado'), 
 	trad_comentario varchar(255), 
 	trad_rol enum('Secretaria','Coordinador','Docente'), 
 	foregin key(doc_id) references documento(doc_id)
