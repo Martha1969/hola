@@ -1,2 +1,11 @@
 create database ProyectAutonoma;
+
 use ProyectAutonoma;
+
+create table TrazaEstado(
+	tra_id int AUTO_INCREMENT PRIMARY KEY,
+	tra_fecha DATE,
+	tra_estado NUM('Aprobado','Rechazado'),
+	tra_comentario VARCHAR(100),
+	FOREIGN KEY (per_id) REFERENCES Perfil(per_id)
+);
