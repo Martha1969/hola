@@ -4,12 +4,11 @@ use ProyectAutonoma;
 
 create table usuario(
 usu_id int auto_increment primary key,
-usu_nombre varchar(20),
+usu_nombre varchar(50),
 usu_doc_id varchar(15),
 usu_semestre varchar(2),
 usu_programa varchar(30),
 usu_celular varchar(15),
-usu_apellidos varchar(30),
 usu_correo varchar(70),
 usu_codigo varchar(10),
 usu_facultad varchar(20));
@@ -23,8 +22,8 @@ foreign key(rol_id_usuario) references usuario(usu_id));
 
 CREATE TABLE perfil(
 per_id INT AUTO_INCREMENT,
-per_modalidad VARCHAR(60) NOT NULL,
 per_titulo VARCHAR(270) NOT NULL,
+per_modalidad VARCHAR(60) NOT NULL,
 per_planteamiento_problema VARCHAR(3500) NOT NULL,
 per_objetivo_general VARCHAR(270) NOT NULL,
 per_objetivos_especificos VARCHAR(1000) NOT NULL,
@@ -65,7 +64,7 @@ create table TrazaEstado(
 	tra_id int AUTO_INCREMENT PRIMARY KEY,
 	tra_fecha DATE,
 	tra_estado enum('Aprobado','Rechazado'),
-	tra_comentario VARCHAR(300),
+	tra_comentario VARCHAR(1000),
 	per_id int,
 	FOREIGN KEY (per_id) REFERENCES Perfil(per_id)
 );
