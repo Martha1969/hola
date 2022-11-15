@@ -7,11 +7,11 @@ usu_id int auto_increment primary key,
 usu_nombre varchar(50),
 usu_doc_id varchar(15),
 usu_semestre varchar(2),
-usu_programa varchar(30),
+usu_programa varchar(70),
 usu_celular varchar(15),
 usu_correo varchar(70),
 usu_codigo varchar(10),
-usu_facultad varchar(20));
+usu_facultad varchar(30));
 
 create table rol(
 rol_id int auto_increment primary key,
