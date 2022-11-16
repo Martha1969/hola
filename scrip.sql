@@ -29,7 +29,7 @@ per_objetivo_general VARCHAR(270) NOT NULL,
 per_objetivos_especificos VARCHAR(1000) NOT NULL,
 per_proyeccion_metodologica VARCHAR(2000) NOT NULL,
 per_referencias_bibliograficas VARCHAR(4500) NOT NULL,
-per_estado VARCHAR(1) NOT NULL,
+per_estado enum('Aprobado','Rechazado','Pendiente') NOT NULL,
 per_observacion VARCHAR(1000) NOT NULL,
 per_usu_id_1 INT NOT NULL,
 per_usu_id_2 INT NOT NULL,
@@ -52,7 +52,7 @@ create table trazadocumento
 (
 	trad_id int not null auto_increment primary key, 
 	trad_fecha date, 
-	trad_estado enum('Aprobado','Rechazado'), 
+	trad_estado enum('Aprobado','Rechazado','Pendiente') 
 	trad_comentario varchar(255), 
 	trad_rol enum('Secretaria','Coordinador','Docente'),
 	doc_id int, 
@@ -63,7 +63,7 @@ create table trazadocumento
 create table TrazaEstado(
 	tra_id int AUTO_INCREMENT PRIMARY KEY,
 	tra_fecha DATE,
-	tra_estado enum('Aprobado','Rechazado'),
+	tra_estado enum('Aprobado','Rechazado','Pendiente') 
 	tra_comentario VARCHAR(1000),
 	per_id int,
 	FOREIGN KEY (per_id) REFERENCES Perfil(per_id)
